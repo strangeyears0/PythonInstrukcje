@@ -61,12 +61,46 @@
 #     print(f"\nWitaj {formatted_name}")
 
 #8.6
-def city_country(city,country):
-    """Zwraca miasto i kraj"""
-    build = city + ',' + country
-    print (build.title())
-city_country('Santiago','Chile')
-city_country('Rawicz','Polska')
-city_country(city='Londyn',country='Anglia')
+# def city_country(city,country):
+#     """Zwraca miasto i kraj"""
+#     build = city + ',' + country
+#     print (build.title())
+# city_country('Santiago','Chile')
+# city_country('Rawicz','Polska')
+# city_country(city='Londyn',country='Anglia')
 
+#8.7
+# def make_album(name,title,track_numbers=''):
+#     """Zwraca słownik z informacją o albumie"""
+#     album={'name':name,'title':title}
+#     if track_numbers:
+#         album['track_numbers']=track_numbers
+#     return album
+# created_album=make_album('O.S.T.R','masz to jak w banku','18')
+# print(created_album)
+# created_album=make_album('Slu','na legalu')
+# print(created_album)
 
+#8.8
+#
+# def make_album(name,title,track_numbers=''):
+#     """Zwraca słownik z informacją o albumie"""
+#     album={'name':name,'title':title}
+#     if track_numbers:
+#         album['track_numbers']=track_numbers
+#     return album
+# while True:
+#     print("Podaj nazwę artysty,albumu i liczbę utworów:")
+#     print("\nWpisz 'q' aby wyjść")
+#
+#     name = input("Podaj nazwę artysty")
+#     if name == 'q':
+#         break
+#     title = input("Podaj nazwę albumu")
+#     if title == 'q':
+#         break
+#     track_numbers = input("Podaj liczbę utwórów")
+#     if track_numbers == 'q':
+#         break
+#     created_album=make_album(name,title,track_numbers)
+#     print(created_album)
