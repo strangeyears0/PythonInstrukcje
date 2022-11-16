@@ -59,3 +59,14 @@
 #         break
 #     formatted_name=get_formatted_name(f_name,l_name)
 #     print(f"\nWitaj {formatted_name}")
+
+#8.6
+def city_country(city,country):
+    """Zwraca miasto i kraj"""
+    build = city + ',' + country
+    print (build.title())
+city_country('Santiago','Chile')
+city_country('Rawicz','Polska')
+city_country(city='Londyn',country='Anglia')
+
+
