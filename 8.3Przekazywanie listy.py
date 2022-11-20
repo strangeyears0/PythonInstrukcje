@@ -77,16 +77,16 @@
 # show_magicians(new_list)
 #8.11
 
-def show_magicians(magicians):
-    """Pokazuje po kolei imiona z listy"""
-    for magician in magicians:
-        print(magician)
-def make_great(magicians):
-    new_list=[]
-    for magician in magicians:
-        new_list.append("Doskonały " +magician.title()  )
-    return new_list
-magicians=['MagicznyAndrzej','CzarownicaMonika','Paprodziad']
-new_list=make_great(magicians[:])
-show_magicians(magicians)
-show_magicians(new_list)
+# def show_magicians(magicians):
+#     """Pokazuje po kolei imiona z listy"""
+#     for magician in magicians:
+#         print(magician)
+# def make_great(magicians):
+#     new_list=[]
+#     for magician in magicians:
+#         new_list.append("Doskonały " +magician.title()  )
+#     return new_list
+# magicians=['MagicznyAndrzej','CzarownicaMonika','Paprodziad']
+# new_list=make_great(magicians[:])
+# show_magicians(magicians)
+# show_magicians(new_list)
