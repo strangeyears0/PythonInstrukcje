@@ -11,9 +11,7 @@ class Car():
 
     def get_descriptive_name(self):
         "Zwrot elegancko sformatowanego opisu samochodu"
-        print(f"Marka: {self.make.title()}"
-              f"\nModel: {self.model.title()}"
-              f"\nRok Produkcji: {self.year}")
-
+        long_name = str(self.year) + '  ' + self.make + ' ' + self.model
+        return long_name
 car= Car("Reanault","Scenic",2000)
-car.get_descriptive_name()
+print(car.get_descriptive_name())
