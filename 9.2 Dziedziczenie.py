@@ -280,6 +280,72 @@
 
 #9.7
 
+# class User():
+#     """Stworzenie klasy użytkownika"""
+#
+#     def __init__(self, first_name, last_name, age, nickname, favourite_pet):
+#         """Inicjalizacja atrybutów użytkownika"""
+#         self.first_name = first_name
+#         self.last_name = last_name
+#         self.age = age
+#         self.nickname = nickname
+#         self.favourite_pet = favourite_pet
+#         self.login_attempts = 0
+#
+#     def describe_user(self):
+#         """Metoda podsumowująca informacje o użytkowniku"""
+#         print(f"Dane użytkownika:"
+#               f"\nImię : {self.first_name.title()}"
+#               f"\nNazwisko : {self.last_name.title()}"
+#               f"\nWiek : {str(self.age)}"
+#               f"\nNick : {self.nickname.title()}"
+#               f"\nUlubione zwierzątko : {self.favourite_pet.title()}")
+#
+#     def greet_user(self):
+#         """Metoda witająca użytkownika"""
+#         print(f"Witam {self.nickname.title()} twóje ulubine zwierzątko to: {self.favourite_pet.title()}")
+#
+#     def increment_login_attempts(self,):
+#         """metoda pozwalajaca na inkrementację wartosci login_attempts"""
+#         self.login_attempts += 1
+#         print(f"Liczba logowań:  {self.login_attempts}")
+#
+#     def reset_login_attempts(self):
+#         """Metoda pozwalająca na resetowanie wartości login attempts"""
+#         self.login_attempts = 0
+#         print(f"Liczba logowań: {self.login_attempts}")
+#
+# # user = User('Bartek','Sławiński',29,'szaman','kotek')
+# # user2 = User('anna','beznazwiska',18,'czarownica','zebra')
+# # user3 = User('hera','kotka',1,'rojber','człowieki')
+# # user.describe_user()
+# # user.greet_user()
+# # user2.describe_user()
+# # user2.greet_user()
+# # user3.describe_user()
+# # user3.greet_user()
+# # user.increment_login_attempts()
+# # user.increment_login_attempts()
+# # user.reset_login_attempts()
+#
+# class Admin(User):
+#     """Stworzenie klasy admina"""
+#
+#     def __init__(self, first_name, last_name, age, nickname, favourite_pet):
+#         """Inicjalizacja uprawnień admina"""
+#         self.priviliges = "\nMoże dodać post"
+#         self.priviliges += "\nMoże usunąć post"
+#         self.priviliges += "\nMoże zbanować użytkownika"
+#
+#     def show_priviliges(self):
+#         """Metoda wyświetlająca uprawnienia admina"""
+#         print(f"Możesz jako Admin: {self.priviliges}")
+# admin=Admin('Admin','Administrator',1,'admin','users')
+# admin.show_priviliges()
+
+
+#9.8
+
 class User():
     """Stworzenie klasy użytkownika"""
 
@@ -315,18 +381,7 @@ class User():
         self.login_attempts = 0
         print(f"Liczba logowań: {self.login_attempts}")
 
-# user = User('Bartek','Sławiński',29,'szaman','kotek')
-# user2 = User('anna','beznazwiska',18,'czarownica','zebra')
-# user3 = User('hera','kotka',1,'rojber','człowieki')
-# user.describe_user()
-# user.greet_user()
-# user2.describe_user()
-# user2.greet_user()
-# user3.describe_user()
-# user3.greet_user()
-# user.increment_login_attempts()
-# user.increment_login_attempts()
-# user.reset_login_attempts()
+
 
 class Admin(User):
     """Stworzenie klasy admina"""
