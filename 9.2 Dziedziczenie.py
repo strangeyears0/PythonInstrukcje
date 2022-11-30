@@ -346,54 +346,155 @@
 
 #9.8
 
-class User():
-    """Stworzenie klasy użytkownika"""
+# class User():
+#     """Represent a simple user profile."""
+#
+#     def __init__(self, first_name, last_name, username, email, location):
+#         """Initialize the user."""
+#         self.first_name = first_name.title()
+#         self.last_name = last_name.title()
+#         self.username = username
+#         self.email = email
+#         self.location = location.title()
+#         self.login_attempts = 0
+#
+#     def describe_user(self):
+#         """Display a summary of the user's information."""
+#         print(f"\n{self.first_name} {self.last_name}")
+#         print(f"  Username: {self.username}")
+#         print(f"  Email: {self.email}")
+#         print(f"  Location: {self.location}")
+#
+#     def greet_user(self):
+#         """Display a personalized greeting to the user."""
+#         print(f"\nWelcome back, {self.username}!")
+#
+#     def increment_login_attempts(self):
+#         """Increment the value of login_attempts."""
+#         self.login_attempts += 1
+#
+#     def reset_login_attempts(self):
+#         """Reset login_attempts to 0."""
+#         self.login_attempts = 0
+#
+#
+# class Admin(User):
+#     """A user with administrative privileges."""
+#
+#     def __init__(self, first_name, last_name, username, email, location):
+#         """Initialize the admin."""
+#         super().__init__(first_name, last_name, username, email, location)
+#
+#         # Initialize an empty set of privileges.
+#         self.privileges = Privileges()
+#
+#
+# class Privileges():
+#     """A class to store an admin's privileges."""
+#
+#     def __init__(self, privileges=[]):
+#         self.privileges = privileges
+#
+#     def show_privileges(self):
+#         print("\nPrivileges:")
+#         if self.privileges:
+#             for privilege in self.privileges:
+#                 print(f"- {privilege}")
+#         else:
+#             print("- This user has no privileges.")
+#
+#
+# eric = Admin('eric', 'matthes', 'e_matthes', 'e_matthes@example.com', 'alaska')
+# eric.describe_user()
+#
+# eric.privileges.show_privileges()
+#
+# print("\nAdding privileges...")
+# eric_privileges = [
+#     'can reset passwords',
+#     'can moderate discussions',
+#     'can suspend accounts',
+# ]
+# eric.privileges.privileges = eric_privileges
+# eric.privileges.show_privileges()
+#
+#
+#9.9
 
-    def __init__(self, first_name, last_name, age, nickname, favourite_pet):
-        """Inicjalizacja atrybutów użytkownika"""
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-        self.nickname = nickname
-        self.favourite_pet = favourite_pet
-        self.login_attempts = 0
 
-    def describe_user(self):
-        """Metoda podsumowująca informacje o użytkowniku"""
-        print(f"Dane użytkownika:"
-              f"\nImię : {self.first_name.title()}"
-              f"\nNazwisko : {self.last_name.title()}"
-              f"\nWiek : {str(self.age)}"
-              f"\nNick : {self.nickname.title()}"
-              f"\nUlubione zwierzątko : {self.favourite_pet.title()}")
+class Car():
+    """prosta próba zaprezentowania samochodu"""
 
-    def greet_user(self):
-        """Metoda witająca użytkownika"""
-        print(f"Witam {self.nickname.title()} twóje ulubine zwierzątko to: {self.favourite_pet.title()}")
+    def __init__(self, make, model, year):
+        """Inicjalizacja atrybutów opisujących samochód"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
 
-    def increment_login_attempts(self,):
-        """metoda pozwalajaca na inkrementację wartosci login_attempts"""
-        self.login_attempts += 1
-        print(f"Liczba logowań:  {self.login_attempts}")
+    def get_descriptive_name(self):
+        "Zwrot elegancko sformatowanego opisu samochodu"
+        long_name = str(self.year) + '  ' + self.make + ' ' + self.model
+        return long_name
 
-    def reset_login_attempts(self):
-        """Metoda pozwalająca na resetowanie wartości login attempts"""
-        self.login_attempts = 0
-        print(f"Liczba logowań: {self.login_attempts}")
+    def read_odometer(self):
+        """wyświetla informacje o przebiegu samochodu"""
+        print(f"Ten samochód ma przejechane {str(self.odometer_reading)} km")
+
+    def update_odometer(self, mileage):
+        """Przypisanie podanej wartości licznikowi przebiegu"""
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("Nie mozna cofnąc licznika przebiegu ! ")
+
+    def increment_odometer(self, kilometers):
+        """Inkrementacja wartosci licznika przebiegu o podana wartość"""
+        self.odometer_reading += kilometers
+
+class Baterry():
+    """Prosta próba modelowania akumulatora samochodu elektrycznego."""
+
+    def __init__(self, battery_size=70):
+        """Inicjalizacja atrybutów akumulatora"""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Wyświetlanie informacji o wielkości akumulatora."""
+        print(f"Ten samochód ma baterię o pojemności {self.battery_size} Kwh")
+
+    def get_range(self):
+        """Wyświetla informacje o  zasięgu samochodu na podstawie pojemności
+        akumulatora"""
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+        message = f"Zasięg tego samochodu wynosi około {range} km "
+        message += "po pełnym naładowaniu akumulatora"
+        print(message)
+
+    def upgrade_battery(self):
+        if self.battery_size == 70:
+
+            self.battery_size = 85
+            print("Upgrade battery !")
+class ElectricCar(Car):
+    """Przedstawia cechy charakterystyczne samochodu elektrycznego."""
+
+    def __init__(self, make, model, year):
+        """Inicjalizacja atrybutów klasy nadrzędnej.
+        Następnie inicjalizacja atrybutów charakterystycznych dla samochodu
+        elektrycznego"""
+        super().__init__(make,model,year)
+        self.battery = Baterry()
 
 
+my_tesla = ElectricCar('Tesla','model s',2016)
 
-class Admin(User):
-    """Stworzenie klasy admina"""
-
-    def __init__(self, first_name, last_name, age, nickname, favourite_pet):
-        """Inicjalizacja uprawnień admina"""
-        self.priviliges = "\nMoże dodać post"
-        self.priviliges += "\nMoże usunąć post"
-        self.priviliges += "\nMoże zbanować użytkownika"
-
-    def show_priviliges(self):
-        """Metoda wyświetlająca uprawnienia admina"""
-        print(f"Możesz jako Admin: {self.priviliges}")
-admin=Admin('Admin','Administrator',1,'admin','users')
-admin.show_priviliges()
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
+my_tesla.battery.upgrade_battery()
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
