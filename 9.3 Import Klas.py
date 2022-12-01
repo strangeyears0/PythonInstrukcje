@@ -51,3 +51,26 @@
 # my_tesla = ElectricCar('tesla','roadster',2019)
 # print(my_tesla.get_descriptive_name())
 #
+
+#9.10
+#
+# from restaurant import Restaurant
+# my_restaurant = Restaurant('U Bartka','Jadłodajnia')
+# print(my_restaurant.describe_restaurant())
+
+#9.11
+
+
+# from User import Admin
+#
+# admin = Admin('User','Name','Username','u@g.com','polon')
+# print(admin.privileges.show_privileges())
+
+#9.12
+
+
+# from adminandprivileges import *
+#
+# admin = Admin('User','Name','Username','u@g.com','polon')
+# print(admin.privileges.show_privileges())
+# print(admin.describe_user())
