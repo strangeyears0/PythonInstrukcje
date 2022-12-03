@@ -7,6 +7,7 @@
 #     print(contents.rstrip())
 
 #ŚCIEŻKA DOSTĘPU DO PLIKU
+from fileinput import filename
 from importlib.resources import contents
 
 # file_path = r'C:\Users\Ja\Documents\panplik.txt'
@@ -98,9 +99,68 @@ from importlib.resources import contents
 
 #10.2
 
-filename = 'what'
+# filename = 'what'
+#
+# with open(filename) as file_object:
+#     lines = file_object.readlines()
+# for line in lines:
+#     print(line.replace('tworzyc','robic').rstrip())
 
-with open(filename) as file_object:
-    lines = file_object.readlines()
-for line in lines:
-    print(line.replace('tworzyc','robic').rstrip())
+# ZAPISYWANIE DANYCH W PLIKU
+
+#ZAPISYWANIE DANYCH DO PUSTEGO PLIKU
+
+# filename = 'programming.txt'
+#
+# with open(filename, 'w') as file_object:
+#     file_object.write("Uwielbiam programować.")
+
+
+#ZAPISYWANIE WIELU WIERSZY
+
+# filename = 'programming.txt'
+#
+# with open(filename, 'w') as file_object:
+#     file_object.write("Uwielbiam programować.")
+#     file_object.write("\nUwielbiam tworzyć nowe gry")
+
+#DOŁĄCZANIE DO PLIKU
+
+# filename = 'programming.txt'
+#
+# with open(filename, 'a') as file_object:
+#     file_object.write("Uwielbiam odnajdywać elementy w ogromnych zbiorach danych.\n")
+#     file_object.write("Uwielbiam tworzyć aplikacje uruchamiane w przeglądarce.")
+
+#10.3
+
+# name = input('Podaj swoje imie:')
+# filename = 'guest.txt'
+#
+# with open(filename, 'w')as file_object:
+#     file_object.write(str(name))
+
+#10.4
+# filename = 'guest_book.txt'
+# flag = True
+# while flag:
+#     name=input('Podaj swoje imie:')
+#     with open(filename, 'a') as file_object:
+#         file_object.write(f"\n{str(name)}")
+#     print("Jeśli chcesz zakończyć wpisz 'q' ")
+#     if name == 'q':
+#         flag = False
+
+#10.5
+
+# filename = 'answers.txt'
+#
+# flag = True
+#
+# while flag:
+#     answer = input("Dlaczego lubisz programowanie?:")
+#     with open(filename, 'a') as file_object:
+#         file_object.write(f"\n{str(answer)}")
+#     print("Jeśli chcesz zakończyć wpisz 'q' ")
+#     if answer == 'q':
+#         flag = False
