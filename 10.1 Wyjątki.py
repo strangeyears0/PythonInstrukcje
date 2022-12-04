@@ -100,3 +100,70 @@ from importlib.resources import contents
 # for filename in filenames:
 #     count_words(filename)
 
+#10.6
+
+# try:
+#     first_number = input("Podaj pierwszą liczbę :")
+#     second_number  = input("Podaj drugą liczbę :")
+#
+#     first_number = int(first_number)
+#     second_number = int(second_number)
+# except:
+#     print("Podaj liczbę nie napis")
+#     quit()
+# print("Dodawanie liczb...")
+# gross = first_number + second_number
+# print(f"Suma liczb {first_number} i {second_number} = {gross}")
+
+#10.7
+
+# while True:
+#     try:
+#         first_number = input("Podaj pierwszą liczbę :")
+#         second_number  = input("Podaj drugą liczbę :")
+#
+#         first_number = int(first_number)
+#         second_number = int(second_number)
+#     except:
+#         print("Podaj liczbę nie napis")
+#     else:
+#         print("Dodawanie liczb...")
+#         gross = first_number + second_number
+#         print(f"Suma liczb {first_number} i {second_number} = {gross}")
+
+
+#10.8 , #10.9
+#
+#
+# file_names = ['cats','dogs']
+#
+# def read_file(file_name):
+#     try:
+#             with open(file_name) as f_obj:
+#                 contents = f_obj.read()
+#                 print(contents)
+#     except FileNotFoundError:
+#             pass
+# for file_name in file_names:
+#     read_file(file_name)
+
+
+#10.10
+
+
+#
+# filename = '145-0.txt'
+#
+# try:
+#     with open(filename,errors='ignore') as f_obj:
+#         contents = f_obj.read()
+# except FileNotFoundError:
+#     msg = f"Przepraszamy ale plik {filename} nie istnieje."
+#     print(msg)
+# else:
+#     #obliczanie liczby słów w PLIKU
+#     words = contents.split()
+#     wordsthe= words.count('the')
+#     print(f"Słowo the występuje {wordsthe} razy")
+#     num_words = len(words)
+#     print(f"Plik {filename} zawiera {num_words} słów.")
